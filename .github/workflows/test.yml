@@ -7,7 +7,7 @@ on:
 
 jobs:
   testing:
-    runs_on: ubuntu-latest  # Corrected runs_on syntax
+    runs-on: ubuntu-latest  # Corrected runs_on syntax
     steps:
       - name: Create the file "peter"
         run: touch peter     # Creates a file named "peter"
