@@ -1,17 +1,20 @@
 name: test
 on:
-   push:
+  push:
     branches:
-       - main
-  pull_request:
-     branches:
-        - main
+      - main
+  pull_request:          # Correcting the event trigger for pull requests
+    branches:
+      - main
+
 jobs:
   testing:
-     runs_on: ubuntu-latest
-     steps:
-        - name: create a file
-          run: touch peter
-          run: chmod 777
-        - name: adit the files
-          run: echo "this is going fine" > peter
+    runs_on: ubuntu-latest  # Corrected runs_on syntax
+    steps:
+      - name: Create a file
+        run: |
+          touch peter
+          chmod 777 peter    # Make sure to specify the file to change permissions
+
+      - name: Edit the file
+        run: echo "this is going fine" > peter  # Corrected typo and clarified the command
