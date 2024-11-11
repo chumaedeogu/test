@@ -1,0 +1,17 @@
+name: peter
+
+on: push
+
+jobs:
+    testing:
+        runs-on: ubuntu-latest
+        steps:
+            - name: test1
+              run: touch paul
+            - name: change the 
+              run: chmod 7777 peter
+            - name: test
+              run: echo "hello world" > peter
+            - name: cat the file
+              run: cat peter
+               
