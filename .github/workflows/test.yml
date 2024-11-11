@@ -1,21 +1,23 @@
 name: peter
 
 on:
-    push:
-      branches:
-        - main
-  
+  push:
+    branches:
+      - main
 
 jobs:
-    testing:
-        runs-on: ubuntu-latest
-        steps:
-            - name: test1
-              run: touch paul
-            - name: change the 
-              run: chmod 7777 peter
-            - name: test
-              run: echo "hello world" > peter
-            - name: cat the file
-              run: cat peter
-               
+  testing:
+    runs_on: ubuntu-latest  # Corrected runs_on syntax
+    steps:
+      - name: Create the file "peter"
+        run: touch peter     # Creates a file named "peter"
+
+      - name: Change permissions for the file
+        run: chmod 777 peter # Set permissions for "peter" (not "paul")
+
+      - name: Write to the file
+        run: echo "hello world" > peter
+
+      - name: Display the contents of the file
+        run: cat peter
+
