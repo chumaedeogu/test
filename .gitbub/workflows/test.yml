@@ -1,0 +1,17 @@
+name: test
+on:
+   push:
+    branches:
+       - manin
+   pull:
+     branches:
+        - main
+jobs:
+  testing:
+     runs_on: ubuntu:latest
+     steps:
+        - name: create a file
+          run: touch peter
+          run: chmod 777
+        - name: adit the files
+          run: echo "this is going fine" > peter
